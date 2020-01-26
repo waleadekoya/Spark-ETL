@@ -8,7 +8,7 @@ import os
 print(os.path.dirname(os.path.abspath(__file__)))
 
 
-class AirportsQueries(SparkDataFrame):
+class AirportsFeed(SparkDataFrame):
 
     def __init__(self, path):
         super().__init__()
@@ -69,5 +69,6 @@ class WordCount(SparkRDD):
 
 
 if __name__ == '__main__':
-    file_path = 'word_count.text '
-    jobs = WordCount(file_path)
+    WordCount('word_count.text')
+    AirportsFeed('airports.text')
+    
